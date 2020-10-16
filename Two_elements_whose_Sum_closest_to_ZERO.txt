@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+#include<stdlib.h>
+#include<math.h>
+using namespace std;
+void minAbsSumPair(int arr[],int size){
+    int l,r,min_l=0,min_r=1,min_sum=0,sum;
+    if(size<2){
+        cout<<"Invalid";
+        return;
+    }
+    min_sum=arr[0]+arr[1];
+    for(l=0;l<size-1;l++){
+        for(r=l+1;r<size;r++){
+            sum=arr[l]+arr[r];
+            if(abs(min_sum)>abs(sum)){
+                min_sum=sum;
+                min_l=arr[l];
+                min_r=arr[r];
+            }
+        }
+    }
+    cout<<min_l<<" "<<min_r;
+}
+int main()
+{
+   int arr[]={2,50,-10,70,-82,85};
+   int n=sizeof(arr)/sizeof(arr[0]);
+   minAbsSumPair(arr,n);
+    return 0;
+}
+
+
+
+Output: -82 85
