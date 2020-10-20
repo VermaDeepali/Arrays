@@ -1,2 +1,3 @@
-# Arrays
-Array questions code in C++
+# C++
+
+* Codes in C++
