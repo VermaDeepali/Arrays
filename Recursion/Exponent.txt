@@ -1,0 +1,45 @@
+//ExponentRecursion
+//Multiplication(9 times)
+#include <iostream>
+
+using namespace std;
+
+#include <iostream>
+
+using namespace std;
+
+int power(int m,int n){
+    if(n==0)
+        return 1;
+    return power(m,n-1)*m;
+}
+
+//Less number of multiplication(6 times)
+
+int power1(int m,int n){
+    if(n==0)
+        return 1;
+    if(n%2==0)
+        return power1(m*m,n/2);
+    return m*power1(m*m,(n-1)/2);
+}
+
+int main()
+{
+    int x,y,a,b;
+    cin>>x>>y;
+    cout<<power(x,y)<<endl;
+    cin>>a>>b;
+    cout<<power(a,b);
+
+    return 0;
+}
+
+output:
+
+2                            
+9                       
+512                                                       
+3                            
+4                           
+81
