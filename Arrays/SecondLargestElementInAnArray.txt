@@ -1,0 +1,36 @@
+//SecondLargestElementInAnArray
+
+#include <iostream>
+
+using namespace std;
+
+
+int secondLargest(int arr[],int n){
+    int res=-1,largest=0,value;
+    for(int i=1;i<n;i++){
+        if(arr[i]>arr[largest]){
+            res=largest;
+            value=arr[res];
+            largest=i;
+        }
+        else if(arr[i] != arr[largest]){
+            if(res==-1 || arr[i]>arr[res]){
+                res=i;
+                value=arr[res];
+            }
+        }
+    }
+    return value;
+}
+
+int main()
+{
+    int arr[]={5,80,200,10,1,66,150};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    cout<<secondLargest(arr,n);
+
+    return 0;
+}
+
+Output:
+150
