@@ -1,0 +1,49 @@
+//InsertOperationInArray
+#include<iostream>
+
+using namespace std;
+
+int insert(int arr[],int n,int x,int pos,int cap)
+{   
+    if(pos==n)
+        return n;
+        
+    int index=pos-1;
+    
+    for(int i=n-1;i>=index;i--){
+        arr[i+1]=arr[i];
+    }
+    arr[index]=x;
+    cout<<"New array is:";
+    cout<<"{";
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<",";
+    }
+    cout<<"}";
+    cout<<endl;
+    return n+1;
+}
+
+int main()
+{   int arr[10]={5,7,10,20};
+    int n=5;
+    int x=100;
+    int pos=2;
+    int cap=5;
+    
+    cout<<"Before insertion of element:"<<n<<endl;
+    cout<<"Old array is:";
+    cout<<"{";
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<",";
+    }
+    cout<<"}";
+    cout<<endl;
+    
+    cout<<"After insertion of element:"<<insert(arr,n,x,pos,cap);
+    return 0;
+}
+
+Output:
+Before insertion of element:5      Old array is:{5,7,10,20,0,} 
+After insertion of element:6       New array is:{5,100,7,10,20,}      
