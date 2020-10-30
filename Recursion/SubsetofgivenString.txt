@@ -1,0 +1,25 @@
+//SubsetofgivenString
+
+#include <iostream>
+
+using namespace std;
+
+void printsubset(string str,string curr="",int index=0){
+    if(index==str.length())
+    {
+        cout<<curr<<"--" ;return ;
+    }
+    printsubset(str,curr,index+1);
+    printsubset(str,curr+str[index],index+1);
+}
+
+int main()
+{
+   printsubset("ABC");
+
+    return 0;
+}
+
+Output:
+ --C--B--BC--A--AC--AB--ABC--
+//empty string printed in the beginning
